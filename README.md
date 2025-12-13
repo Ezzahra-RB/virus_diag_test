@@ -1,24 +1,138 @@
-# Virus Diagnosis Test
+---
 
-Welcome to the Virus Diagnosis Test repository! This project is devoted to creating tools or a prototype to facilitate the identification and diagnosis of various viruses, leveraging the power of computational methods.
+````markdown
+# Virus Diagnosis – Machine Learning Pipeline
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## 📌 Description
+Ce projet consiste à développer un pipeline de **diagnostic de maladie** basé sur un modèle de **régression logistique**.  
+L’objectif principal du TP est de mettre en pratique les **bonnes pratiques de génie logiciel**, notamment l’utilisation du **design pattern Builder** pour structurer un pipeline de machine learning.
 
 ---
 
-## Introduction
-The ability to rapidly and accurately diagnose viruses plays a critical role in healthcare. The aim of this repository is to provide efficient computational techniques that work in tandem with molecular diagnostic methods.
-As this project is written primarily in Python, it aims to be adaptable, accessible, and useful to researchers, scientists, and educators with varying levels of skill with coding.
+## 🏗️ Architecture du projet
 
+```text
+virus_diag_test/
+│── main.py
+│── clinical_predictor.py
+│── model.pkl
+│
+├── core/
+│   │── dataset.py
+│   │── logistic_regression.py
+│   │── model.py
+│
+├── pipeline/
+│   │── builder.py
+│   │── clinical_builder.py
+│   │── ml_pipeline.py
+│   │── trainer.py
+│   │── evaluate.py
+│
+├── utils/
+│   │── preprocessing.py
+│
+├── data/
+│   │── disease_diagnosis.csv
+│
+└── README.md
+````
 
-## Features
+---
 
-- Main area devoted to theories while next parts Install dependable pathogen platforms. Sub-cell folder Secure Atlantic Ocean  adaptée Discover Linux electroc medium peinture.application Here
- the/server.strict Explore dependencies create fault-trees maintain easier
-- . Continuous training implemented supportive statistics contrast algorithms based pathological-genetics patterns classifiers thirty-second convolutional norms feed automatic simpl materials \ graphics end template-query.(illustrating radiation for secure preclinical string BASIC tracing Bounding Sometimes Accurate sequence henceforth let . algorithms (indicated taxonomy materials resembling Error casualties reproducibility aimed).end controlling category-inspired  flexibility quoted-wave integrationsincluyes viterbi-.aided Secure strict#UIRE stimulation/beware !
+## 🧠 Design Pattern utilisé : Builder
+
+Le **design pattern Builder** est utilisé pour construire le pipeline de machine learning étape par étape, en séparant clairement :
+
+* la **construction** du pipeline
+* son **exécution**
+
+### Rôles dans le pattern
+
+| Élément          | Classe                    |
+| ---------------- | ------------------------- |
+| Product          | `MLPipeline`              |
+| Builder abstrait | `PipelineBuilder`         |
+| Builder concret  | `ClinicalPipelineBuilder` |
+| Director         | `TrainerDirector`         |
+| Client           | `main.py`                 |
+
+### Avantages
+
+* Séparation des responsabilités
+* Code plus lisible et maintenable
+* Facilité d’extension (autres modèles, autres pipelines)
+
+---
+
+## ⚙️ Fonctionnement du pipeline
+
+1. Chargement des données
+2. Prétraitement (encodage des variables catégorielles)
+3. Séparation train / test
+4. Construction du modèle
+5. Entraînement et sauvegarde
+6. Évaluation
+7. Prédiction sur un nouveau patient
+
+---
+
+## 🚀 Exécution du projet
+
+### Prérequis
+
+* Python 3.9+
+* Bibliothèques :
+
+  * `scikit-learn`
+  * `pandas`
+  * `joblib`
+
+### Installation des dépendances
+
+```bash
+pip install -r requirements.txt
+```
+
+*(ou installer manuellement les bibliothèques)*
+
+---
+
+### Lancer le projet
+
+```bash
+python main.py
+```
+
+---
+
+## 🧪 Exemple de prédiction
+
+Le fichier `clinical_predictor.py` permet d’utiliser le modèle entraîné pour prédire l’état d’un patient :
+
+```python
+predictor = ClinicalPredictor(model.model)
+result = predictor.diagnose(sample)
+print(result)
+```
+
+---
+
+## 🎓 Objectif pédagogique
+
+Ce TP vise à :
+
+* Appliquer le **design pattern Builder**
+* Structurer un projet de machine learning selon les principes du **génie logiciel**
+* Améliorer la lisibilité, la maintenabilité et l’évolutivité du code
+
+---
+
+## 👩‍🎓 Auteur
+
+* **Ezzahra RB**
+* Master IA – Génie Logiciel
+
+```
+
+---
