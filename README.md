@@ -1,15 +1,12 @@
----
-
 ````markdown
 # Virus Diagnosis – Machine Learning Pipeline
 
-## 📌 Description
+## Description
 Ce projet consiste à développer un pipeline de **diagnostic de maladie** basé sur un modèle de **régression logistique**.  
 L’objectif principal du TP est de mettre en pratique les **bonnes pratiques de génie logiciel**, notamment l’utilisation du **design pattern Builder** pour structurer un pipeline de machine learning.
 
----
 
-## 🏗️ Architecture du projet
+## Architecture du projet
 
 ```text
 virus_diag_test/
@@ -38,9 +35,8 @@ virus_diag_test/
 └── README.md
 ````
 
----
 
-## 🧠 Design Pattern utilisé : Builder
+## Design Pattern utilisé : Builder
 
 Le **design pattern Builder** est utilisé pour construire le pipeline de machine learning étape par étape, en séparant clairement :
 
@@ -63,9 +59,8 @@ Le **design pattern Builder** est utilisé pour construire le pipeline de machin
 * Code plus lisible et maintenable
 * Facilité d’extension (autres modèles, autres pipelines)
 
----
 
-## ⚙️ Fonctionnement du pipeline
+## Fonctionnement du pipeline
 
 1. Chargement des données
 2. Prétraitement (encodage des variables catégorielles)
@@ -75,9 +70,8 @@ Le **design pattern Builder** est utilisé pour construire le pipeline de machin
 6. Évaluation
 7. Prédiction sur un nouveau patient
 
----
 
-## 🚀 Exécution du projet
+## Exécution du projet
 
 ### Prérequis
 
@@ -96,7 +90,6 @@ pip install -r requirements.txt
 
 *(ou installer manuellement les bibliothèques)*
 
----
 
 ### Lancer le projet
 
@@ -104,9 +97,8 @@ pip install -r requirements.txt
 python main.py
 ```
 
----
 
-## 🧪 Exemple de prédiction
+## Exemple de prédiction
 
 Le fichier `clinical_predictor.py` permet d’utiliser le modèle entraîné pour prédire l’état d’un patient :
 
@@ -116,9 +108,8 @@ result = predictor.diagnose(sample)
 print(result)
 ```
 
----
 
-## 🎓 Objectif pédagogique
+## Objectif pédagogique
 
 Ce TP vise à :
 
@@ -126,13 +117,10 @@ Ce TP vise à :
 * Structurer un projet de machine learning selon les principes du **génie logiciel**
 * Améliorer la lisibilité, la maintenabilité et l’évolutivité du code
 
----
 
-## 👩‍🎓 Auteur
+## Auteur
 
 * **Ezzahra RB**
 * Master IA – Génie Logiciel
 
 ```
-
----
